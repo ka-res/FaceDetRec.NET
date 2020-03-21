@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4DB2DBEF-AFB8-4B8F-BE6F-414992D7EA4E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>FaceDetRec.WPFClient</RootNamespace>
+    <AssemblyName>FaceDetRec.WPFClient</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.4.2.1\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Windsor.4.1.0\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="DirectShowLib, Version=2.1.0.1599, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DirectShowLib.1.0.0\lib\DirectShowLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.UI, Version=3.3.0.2824, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EMGU.CV.3.3.0.2824\lib\net35\Emgu.CV.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.World, Version=3.3.0.2824, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EMGU.CV.3.3.0.2824\lib\net35\Emgu.CV.World.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero2" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Expression.Blend.Sdk.1.0.2\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="ZedGraph, Version=5.1.7.430, Culture=neutral, PublicKeyToken=02a83cbd123fcd60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZedGraph.5.1.7\lib\net35-Client\ZedGraph.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Enums\ButtonText.cs" />
+    <Compile Include="Common\Enums\RecognizerTypes.cs" />
+    <Compile Include="Common\Enums\StatusTypes.cs" />
+    <Compile Include="Config\RecognizerConfig.cs" />
+    <Compile Include="Converters\BitmapToImageSourceConverter.cs" />
+    <Compile Include="Converters\BoolToSolidColorBrushConverter.cs" />
+    <Compile Include="DataBase\FaceDetRecDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FaceDetRecDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\FaceDetRecDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FaceDetRecDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\FaceDetRecDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FaceDetRecDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Image.cs">
+      <DependentUpon>FaceDetRecDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Person.cs">
+      <DependentUpon>FaceDetRecDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\ImageModel.cs" />
+    <Compile Include="DataModels\ImageWithLabelModel.cs" />
+    <Compile Include="DataModels\PersonModel.cs" />
+    <Compile Include="DataModels\RecognizerModel.cs" />
+    <Compile Include="DependencyInjection\Installers.cs" />
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Repositories\Implementations\DataBase\BaseRepositoryDb.cs" />
+    <Compile Include="Repositories\Implementations\DataBase\ImageRepositoryDb.cs" />
+    <Compile Include="Repositories\Implementations\LocalStorage\BaseRepositoryLs.cs" />
+    <Compile Include="Repositories\Implementations\LocalStorage\ImageRepositoryLs.cs" />
+    <Compile Include="Repositories\Implementations\DataBase\PersonRepositoryDb.cs" />
+    <Compile Include="Repositories\Implementations\LocalStorage\PersonRepositoryLs.cs" />
+    <Compile Include="Repositories\Interfaces\DataBase\IBaseRepositoryDb.cs" />
+    <Compile Include="Repositories\Interfaces\LocalStorage\IBaseRepositoryLs.cs" />
+    <Compile Include="Repositories\Interfaces\LocalStorage\IImageRepositoryLs.cs" />
+    <Compile Include="Repositories\Interfaces\DataBase\IPersonRepositoryDb.cs" />
+    <Compile Include="Repositories\Interfaces\LocalStorage\IPersonRepositoryLs.cs" />
+    <Compile Include="Services\Implementations\CameraCaptureService.cs" />
+    <Compile Include="Services\Implementations\FaceDetectionService.cs" />
+    <Compile Include="Repositories\Interfaces\DataBase\IImageRepositoryDb.cs" />
+    <Compile Include="Services\Implementations\DatabaseService.cs" />
+    <Compile Include="Services\Implementations\FaceRecognitionService.cs" />
+    <Compile Include="Services\Implementations\FileDirectoryService.cs" />
+    <Compile Include="Services\Implementations\LocalStorageService.cs" />
+    <Compile Include="Services\Interfaces\IBaseDataSourceService.cs" />
+    <Compile Include="Services\Interfaces\ICameraCaptureService.cs" />
+    <Compile Include="Services\Interfaces\IFaceDetectionService.cs" />
+    <Compile Include="Services\Interfaces\IDatabaseService.cs" />
+    <Compile Include="Services\Interfaces\IFaceRecogntionService.cs" />
+    <Compile Include="Services\Interfaces\IFileDirectoryService.cs" />
+    <Compile Include="Services\Interfaces\ILocalStorageService.cs" />
+    <Compile Include="Utils\BitmapUtility.cs" />
+    <Compile Include="Utils\LocalStorageUtility.cs" />
+    <Compile Include="Utils\RecognizersUtility.cs" />
+    <Compile Include="Utils\StatusBarUtility.cs" />
+    <Compile Include="Utils\VideoHardwareUtility.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="DataModels\CameraInputModel.cs" />
+    <Compile Include="ViewModels\MainWindow\Controls.cs" />
+    <Compile Include="ViewModels\MainWindow\IControls.cs" />
+    <Compile Include="ViewModels\MainWindow\IDeviceIndexFactory.cs" />
+    <Compile Include="ViewModels\MainWindow\IMainPageModel.cs" />
+    <Compile Include="ViewModels\MainWindow\IMainPageViewModel.cs" />
+    <Compile Include="ViewModels\MainWindow\IMethods.cs" />
+    <Compile Include="ViewModels\MainWindow\IParameters.cs" />
+    <Compile Include="ViewModels\MainWindow\IShell.cs" />
+    <Compile Include="ViewModels\MainWindow\MainPageModel.cs" />
+    <Compile Include="ViewModels\MainWindow\MainPageViewModel.cs" />
+    <Compile Include="ViewModels\MainWindow\Methods.cs" />
+    <Compile Include="ViewModels\MainWindow\Parameters.cs" />
+    <Compile Include="ViewModels\MainWindow\Shell.cs" />
+    <Compile Include="Views\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EntityDeploy Include="DataBase\FaceDetRecDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>FaceDetRecDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DataBase\FaceDetRecDB.edmx.diagram">
+      <DependentUpon>FaceDetRecDB.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="ViewModels\MainWindow\ModelCommand.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Assets\haarcascade_frontalface_alt_tree.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataBase\FaceDetRecDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FaceDetRecDB.edmx</DependentUpon>
+      <LastGenOutput>FaceDetRecDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DataBase\FaceDetRecDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FaceDetRecDB.edmx</DependentUpon>
+      <LastGenOutput>FaceDetRecDB.cs</LastGenOutput>
+    </Content>
+    <Content Include="DataBase\FaceDetRecDB.edmx.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\haarcascade_eye.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\haarcascade_frontalface_default.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\EMGU.CV.3.3.0.2824\build\Emgu.CV.targets" Condition="Exists('..\packages\EMGU.CV.3.3.0.2824\build\Emgu.CV.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EMGU.CV.3.3.0.2824\build\Emgu.CV.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EMGU.CV.3.3.0.2824\build\Emgu.CV.targets'))" />
+  </Target>
+</Project>
